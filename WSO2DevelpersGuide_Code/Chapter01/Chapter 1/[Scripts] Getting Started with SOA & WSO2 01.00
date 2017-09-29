@@ -1,0 +1,443 @@
+==================================
+Getting Started with SOA & WSO2
+==================================
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+wum
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+WUM keeps WSO2 products up-to-date.
+
+* Find more information at http://wso2.com/update
+
+Usage:
+  wum [command]
+
+Available Commands:
+  init         Initialize WUM with your WSO2 credentials
+  search       Search products containing specific keyword(s)
+  add          Add or download a product
+  check-update Check for new updates for products
+  update       Update products in your local repository
+  list         List products in your local repository
+  describe     Show details of products in your local repository
+  delete       Delete products in your local repository
+  config       Change WUM configuration
+  version      Display wum version information
+
+Flags:
+  -h, --help      help for wum
+  -v, --verbose   enable verbose mode
+
+Use "wum [command] --help" for more information about a command.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+wum init
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+You need a WSO2 account to start using wum.
+Don't have one yet? Sign up at https://wso2.com/user/register
+
+Please enter your WSO2 credentials to continue
+Username: my@email.com
+Password for 'my@email.com': 
+Authenticating...
+Done!
+
+-- Welcome to WUM 1.0-beta --
+
+* Find more information at http://wso2.com/update
+* Please contact us for further information at http://wso2.com/contact
+
+What's next? Have a look at the following list of wum commands:
+Add WSO2 products to your product repository
+  wum search            Search WSO2 products
+  wum add               Add or download WSO2 products
+
+Update WSO2 products available in your product repository
+  wum check-update      Check for new updates
+  wum update            Update your WSO2 products
+
+Manage WSO2 products available in your product repository
+  wum list              List WSO2 products
+  wum describe          Show details of WSO2 products
+  wum delete            Delete WSO2 products
+
+Use "wum [command] --help" for more information about a command.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+wum config local.product.repo wso2/products
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+New product repository is \wso2\products
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+wum add --file wso2esb-5.0.0.zip
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+Connecting to WSO2 Update...
+Adding product wso2esb-5.0.0...
+Successfully added to following location:
+C:\wso2\products\wso2esb\5.0.0\wso2esb-5.0.0.zip
+
+What's next?
+  use "wum check-update wso2esb-5.0.0" to check for updates
+  use "wum update wso2esb-5.0.0" to install latest updates
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+wum add wso2ei
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+Connecting to WSO2 Update...
+The following product(s) will be downloaded.
+  wso2ei-6.0.0.zip
+After this operation, 600.8MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Downloading product wso2ei-6.0.0... [600.6MB/600.8MB]
+Successfully added to following location:6MB/600.8MB]
+
+What's next?product wso2ei-6.0.0... [566.7MB/600.8MB]
+  use "wum check-update wso2ei-6.0.0" to check for updates
+  use "wum update wso2ei-6.0.0" to install latest updates
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+wum list
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+Product                 Updated         Filename
+wso2ei-6.0.0            -               wso2ei-6.0.0.zip
+wso2esb-5.0.0           -               wso2esb-5.0.0.zip
+
+What's next?
+  use "wum describe [<product-pattern>]" to get more details of products
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+C:\>wum describe wso2ei-6.0.0
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+Filename:               wso2ei-6.0.0.zip
+Product Name:           wso2ei
+Product Version:        6.0.0
+Kernel Version:         4.4.14
+Last Updated Time:      -
+Product File Path:      C:\wso2\products\wso2ei\6.0.0\wso2ei-6.0.0.zip
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+wum check-update wso2ei-6.0.0
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+Connecting to WSO2 Update...
+
+Checking for latest updates for wso2ei-6.0.0...
+Product is up to date.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+wum check-update wso2esb-5.0.0
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+Connecting to WSO2 Update...
+
+Checking for latest updates for wso2esb-5.0.0...
+37 updates are available
+[WARNING] 17 critical security updates. WSO2 strongly recommends that you install these updates now.
+
+What's next?
+  use "wum update" to install latest updates
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+wum update
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+Connecting to WSO2 Update...
+
+Validating your subscription status for product wso2ei...
+[WARNING] Your credentials are not associated with an active WSO2 subscription.
+Please remember that updates are not licensed for use in production without a valid WSO2 subscription.
+See: http://wso2.com/update for more details.
+
+Updating wso2ei-6.0.0...
+Product is up to date.
+
+Validating your subscription status for product wso2esb...
+[WARNING] Your credentials are not associated with an active WSO2 subscription.
+Please remember that updates are not licensed for use in production without a valid WSO2 subscription.
+See: http://wso2.com/update for more details.
+
+Updating wso2esb-5.0.0...
+37 updates are available
+Downloading updates... [36/37]
+Installing updates...
+Preparing update summary...
+Building updated product...
+Update summary:
+  Installed updates: 37
+  * [WARNING] WSO2 strongly recommends to use this updated product for production as soon as possible.
+  Security updates: 17
+  Updated Product: C:\wso2\products\wso2esb\5.0.0\wso2esb-5.0.0.1488178152499.zip
+  * More information about updates are available inside the above product archive
+  Update summary(pdf): (product-archive)/updates\summary-2017-02-28T19-31-14\update-summary-1488178152499.pdf
+
+What's next?
+  use "wum list [<product-pattern>]" to list products in your local repository
+  use "wum describe [<product-pattern>]" to get more details of products
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+wum delete wso2esb-5.0.0
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+The following product file(s) will be deleted.
+  wso2esb-5.0.0.1488178152499.zip
+  wso2esb-5.0.0.zip
+Do you want to continue? [y/N] y
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+Linux/Mac OS:
+
+echo $JAVA_HOME
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+/usr/java/jdk1.8.0_121
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+Windows:
+
+set JAVA_HOME
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+C:\Program Files\Java\jdk1.8.0_121 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+Linux/Mac OS: 
+
+sh integrator.sh
+
+Windows:
+
+integrator.bat --run 
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+...
+WSO2 Carbon started in X sec
+...
+Mgt Console URL  : https://<EI HOST>:8243/carbon/
+...
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+Linux/Mac OS:
+sh <EI_HOME>/wso2/business-process/bin/integrator.sh stop
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+[Console show how wso2 integrator stops]
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+Windows:
+CTRL + C in console
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+[Console show how wso2 integrator stops]
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+Linux/Mac OS: 
+
+sh <EI_HOME>/wso2/analytics/bin/wso2server.sh
+
+Windows:
+
+<EI_HOME>/wso2/analytics/bin/wso2server.bat
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+...
+WSO2 Carbon started in X sec
+...
+Mgt Console URL  : https://<EI HOST>:9444/carbon/
+...
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+Linux/Mac OS: 
+
+sh <EI_HOME>/wso2/business-process/bin/wso2server.sh
+
+Windows:
+
+<EI_HOME>/wso2/business-process/bin/wso2server.bat
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+...
+WSO2 Carbon started in X sec
+...
+Mgt Console URL  : https://<EI HOST>:9445/carbon/
+...
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+Linux/Mac OS: 
+
+sh <EI_HOME>/wso2/broker/bin/wso2server.sh
+
+Windows:
+
+<EI_HOME>/wso2/broker/bin/wso2server.bat
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+...
+WSO2 Carbon started in X sec
+...
+Mgt Console URL  : https://<EI HOST>:9446/carbon/
+...
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+
+
+_______________________________________________________________
+:::::::::::::::::::::. COMMAND .:::::::::::::::::::::::::::::::
+
+Linux/Mac OS: 
+
+sh <EI_HOME>/bin/start-all.sh
+
+Windows:
+
+<EI_HOME>/bin/start-all.bat
+
+:::::::::::::::::::::. OUTPUT .::::::::::::::::::::::::::::::::
+
+* 4 Consoles starts.
+
+* In each one will see when boot up finished:
+
+...
+WSO2 Carbon started in X sec
+...
+Mgt Console URL  : https://<EI HOST>:XXXX/carbon/
+...
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+__________________________________________________________________
+

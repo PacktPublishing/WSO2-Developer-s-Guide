@@ -1,0 +1,25 @@
+<api xmlns="http://ws.apache.org/ns/synapse" name="flights" context="/flights">
+	<resource methods="POST" uri-template="/get?from={from}&to={to}&date={date}">
+		<inSequence>
+		
+			<!-- Transformation -->
+			<enrich>
+				<source clone="false" type="inline">
+					<currentDate xmlns=""/>
+				</source>
+				<target action="child" type="custom" xpath="//flight">
+				</target>
+			</enrich>
+			<property name="date" scope="default" expression="get-property('SYSTEM_DATE','yyyy.MM.dd')" />
+			<enrich>
+				<source clone="false" type="property" property="date"/>
+				<target action="child" type="custom" xpath="//currentDate">
+				</target>
+			</enrich>
+
+			<!-- Further processing -->
+			<log level="full"/>
+			<respond/>
+		</inSequence>
+	</resource>
+</api>

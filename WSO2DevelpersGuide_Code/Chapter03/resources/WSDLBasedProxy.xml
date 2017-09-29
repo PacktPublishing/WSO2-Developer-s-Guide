@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="WSDLBasedProxy"
+       transports="http https"
+       startOnLoad="true">
+	<target>
+		<endpoint>
+			<wsdl service="Version"
+               port="VersionHttpSoap11Endpoint"
+               uri="http://localhost:8280/services/Version?wsdl"/>
+		</endpoint>
+		<outSequence>
+			<send/>
+		</outSequence>
+	</target>
+	<publishWSDL uri="http://localhost:8280/services/Version?wsdl"/>
+</proxy>

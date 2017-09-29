@@ -1,0 +1,31 @@
+<api xmlns="http://ws.apache.org/ns/synapse" name="flights" context="/flights">
+	<resource methods="POST" uri-template="/get?from={from}&to={to}&date={date}">
+		<inSequence>
+
+			<!-- Message validation -->
+			<validate source="json-eval($.rootElement)">
+				<!-- Specify the JSON schema -->
+				<schema key=" conf:/JSONSchema.json"/>
+				<on-fail>
+					<!-- Log the error in the server log -->
+					<log level="custom">
+						<property name="ERROR" value="Invalid Request"/>
+					</log>
+					<!-- Create a error message -->
+					<payloadFactory media-type="json">
+						<format>{"Error":"Invalid Request"}</format>
+					</payloadFactory>
+					<!-- Configure the HTTP code of the response -->
+					<property name="HTTP_SC" value="500" scope="axis2"/>
+					<!-- Return to the client -->
+					<respond/>
+				</on-fail>
+			</validate>
+			
+
+			<!-- Further processing -->
+			<log level="full"/>
+			<respond/>
+		</inSequence>
+	</resource>
+</api>

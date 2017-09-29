@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="InSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property description="set variable" expression="//message" name="MyProperty" scope="default" type="STRING"/>
+    <payloadFactory description="change message" media-type="xml">
+        <format>
+            <response xmlns="">
+                <message>Fine thanks!</message>
+            </response>
+        </format>
+        <args/>
+    </payloadFactory>
+    <respond description="respond"/>
+</sequence>

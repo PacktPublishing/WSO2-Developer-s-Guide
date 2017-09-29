@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="de6253bb-f84a-48da-bffb-ec1201fd0ae9" activeEnvironment="Default" name="Chapter11" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="b7666280-523f-468f-af9f-71ebecef9d28" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8280" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8280</con:endpoint></con:endpoints><con:resource name="WriteDynamic" path="/vfs/writeDynamic" id="9249f55b-cef7-410d-9014-1a92af42b8de"><con:settings/><con:parameters/><con:method name="WriteDynamic 1" id="33339831-b17b-42fa-b341-cdcf0f37589f" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:writ="http://localhost/vfs/writeDynamic">writ:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>202</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>202</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>202</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="c34b3bc3-21e2-4ca6-9470-afc6d5ea9875" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8280</con:endpoint><con:request>{
+	"path": "C:/Temp/",
+	"filename": "flights.json",
+	"content": {
+		"flights": {
+			"flight": {
+				"company": "PacktAir",
+				"time": "10:30",
+				"price": "300"
+			}
+		}
+	}
+}</con:request><con:originalUri>http://localhost/vfs/writeDynamic</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="fileConnector" path="/flights/fileConnector" id="e80ad50b-382d-41ae-86a7-0a806be08f11"><con:settings/><con:parameters/><con:method name="Method 1" id="a4af9f87-a390-4e1a-9b83-c6112c768d57" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>405</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>405</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>405</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:fil="http://localhost/flights/fileConnector">fil:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>202</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>202</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>202</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="f22e3355-d19e-4252-a87d-f9f86745362e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8280</con:endpoint><con:request>{
+	"path": "C:/Temp/",
+	"filename": "flights.json",
+	"content": {
+		"flights": {
+			"flight": {
+				"company": "PacktAir",
+				"time": "10:30",
+				"price": "300"
+			}
+		}
+	}
+}
+
+</con:request><con:originalUri>http://localhost/flights/fileConnector</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

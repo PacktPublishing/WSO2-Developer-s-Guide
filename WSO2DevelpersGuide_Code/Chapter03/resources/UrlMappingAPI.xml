@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse"
+     name="UrlMappingAPI"
+     context="/urlmappingapi">
+	<resource methods="GET" url-mapping="/getParam">
+		<inSequence>
+			<log>
+				<property name="***Value of GET param" expression="get-property(query.param.param)"/>
+				<property name="***Value of GET param2" expression="$ctx:query.param.param"/>
+			</log>
+			<respond/>
+		</inSequence>
+	</resource>
+	<resource methods="POST" url-mapping="/postParam">
+		<inSequence>
+			<log>
+				<property name="***Value of POST param" expression="json-eval($.param)"/>
+			</log>
+			<respond/>
+		</inSequence>
+	</resource>
+</api>

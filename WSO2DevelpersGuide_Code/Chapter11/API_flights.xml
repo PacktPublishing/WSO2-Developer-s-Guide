@@ -1,0 +1,38 @@
+<api context="/flights" name="flights">
+	<resource methods="POST" url-mapping="/fileConnector">
+		<inSequence>
+			<log level="full"/>
+			<property expression="json-eval($.path)" name="PATH"/>
+			<property expression="json-eval($.filename)" name="FILENAME"/>
+			<property expression="json-eval($.content)" name="CONTENT"/>
+			<property expression="fn:concat('file://',$ctx:PATH,$ctx:FILENAME)" name="source"/>
+			<fileconnector.isFileExist>
+				<source>{$ctx:source}</source>
+			</fileconnector.isFileExist>
+			<property expression="json-eval($.fileExist)" name="exists" type="BOOLEAN"/>
+			<filter xpath="$ctx:exists">
+				<then>
+					<fileconnector.append>
+						<destination>{$ctx:source}</destination>
+						<inputContent>{$ctx:CONTENT}</inputContent>
+					</fileconnector.append>
+					<payloadFactory media-type="json">
+						<format>{"status":"File updated"}</format>
+						<args/>
+					</payloadFactory>
+				</then>
+				<else>
+					<fileconnector.create>
+						<source>{$ctx:source}</source>
+						<inputContent>{$ctx:CONTENT}</inputContent>
+					</fileconnector.create>
+					<payloadFactory media-type="json">
+						<format>{"status":"File created"}</format>
+						<args/>
+					</payloadFactory>
+				</else>
+			</filter>
+			<respond/>
+		</inSequence>
+	</resource>
+</api>

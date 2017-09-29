@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="My1stDataService" groupId="com.My1stDataServicesProject.dataservice" version="1.0.0" type="service/dataservice" serverRole="DataServicesServer">
+        <file>dataservice/My1stDataService.dbs</file>
+    </artifact>
+</artifacts>

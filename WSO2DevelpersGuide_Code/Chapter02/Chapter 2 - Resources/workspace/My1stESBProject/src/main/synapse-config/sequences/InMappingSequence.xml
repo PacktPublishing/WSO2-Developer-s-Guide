@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="InMappingSequence" onError="FaultSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <datamapper config="gov:datamapper/My1stDataMapperConfiguration.dmc" description="My1stDataMapper" inputSchema="gov:datamapper/My1stDataMapperConfiguration_inputSchema.json" inputType="XML" outputSchema="gov:datamapper/My1stDataMapperConfiguration_outputSchema.json" outputType="XML"/>
+    <respond description="Respond"/>
+</sequence>

@@ -1,0 +1,69 @@
+<api xmlns="http://ws.apache.org/ns/synapse" name="flights" context="/flights">
+	<resource methods="POST" uri-template="/get?from={from}&to={to}&date={date}">
+		<inSequence>
+
+			<!-- First example -->
+			<conditionalRouter continueAfter="false">
+				<conditionalRoute breakRoute="false">
+					<condition>
+						<match xmlns="" type="url" regex="/flights/get.*"/>
+					</condition>
+					<target sequence="flights_IN_SEQ"/>
+				</conditionalRoute>
+			</conditionalRouter>
+
+			<!-- Second example -->
+			<conditionalRouter continueAfter="false">
+				<conditionalRoute breakRoute="false">
+					<condition>
+						<and xmlns="">
+							<match type="url" regex="/flights/get.*"/>
+							<match type="header" source="company" 																	regex="PacktAir"/>
+						</and>
+					</condition>
+					<target sequence="PacktAir_IN_SEQ"/>
+				</conditionalRoute>
+			</conditionalRouter>
+
+			<!-- Third example -->
+			<conditionalRouter continueAfter="false">
+				<conditionalRoute breakRoute="false">
+					<condition>
+						<and xmlns="">
+							<match type="url" regex="/flights/get.*"/>
+							<match type="header" source="company" 																	regex="PacktAir"/>
+						</and>
+						<or>
+							<equal type="param" source="company" 																	value="PacktAir"/>
+						</or>
+					</condition>
+					<target sequence="PacktAir_IN_SEQ"/>
+				</conditionalRoute>
+			</conditionalRouter>
+
+			<!-- Fourth example -->
+			<conditionalRouter continueAfter="false">
+				<conditionalRoute breakRoute="false">
+					<condition>
+						<and xmlns="">
+							<match type="url" regex="/flights/get.*"/>
+							<match type="header" source="company" regex="PacktAir"/>
+						</and>
+						<or>
+							<equal type="param" source="company" value="PacktAir"/>
+						</or>
+						<not>
+							<equal type="param" source="next24Hr" value="false"/>
+						</not>
+					</condition>
+					<target sequence="PacktAir_IN_SEQ"/>
+				</conditionalRoute>
+			</conditionalRouter>
+
+
+			<!-- Further processing -->
+			<log level="full"/>
+			<respond/>
+		</inSequence>
+	</resource>
+</api>

@@ -1,0 +1,49 @@
+<api context="/vfs" name="vfs">
+	<resource methods="POST" url-mapping="/writeSimple">
+		<inSequence>
+			<property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+			<property expression="fn:concat(fn:substring-after(get-property('MessageID'), 'urn:uuid:'), '.xml')"
+                    name="transport.vfs.ReplyFileName" scope="transport"/>
+			<call>
+				<endpoint>
+					<address uri="vfs:file:///home/user/vfs/out"/>
+				</endpoint>
+			</call>
+			<payloadFactory media-type="json">
+				<format>{"status":"File created"}</format>
+				<args/>
+			</payloadFactory>
+			<respond/>
+		</inSequence>
+	</resource>
+	<resource methods="POST" uri-template="/writeDynamic">
+		<inSequence>
+			<log level="custom">
+				<property name="LOG" value="Get Parameters"/>
+			</log>
+			<property name="PATH" expression="json-eval($.path)"/>
+			<property name="FILENAME" expression="json-eval($.filename)"/>
+			<property name="CONTENT" expression="json-eval($.content)"/>
+			<header name="To" expression="fn:concat('vfs:file:///',$ctx:PATH,$ctx:FILENAME)"/>
+			<property name="OUT_ONLY" value="true" scope="default" type="STRING"/>
+			<log level="custom">
+				<property name="LOG" value="Creating file"/>
+			</log>
+			<payloadFactory media-type="json">
+				<format>$1</format>
+				<args>
+					<arg evaluator="xml" expression="$ctx:CONTENT"/>
+				</args>
+			</payloadFactory>
+			<call/>
+			<log level="custom">
+				<property name="LOG" value="Creating response"/>
+			</log>
+			<payloadFactory media-type="json">
+				<format>{"status":"File created"}</format>
+				<args/>
+			</payloadFactory>
+			<respond/>
+		</inSequence>
+	</resource>
+</api>

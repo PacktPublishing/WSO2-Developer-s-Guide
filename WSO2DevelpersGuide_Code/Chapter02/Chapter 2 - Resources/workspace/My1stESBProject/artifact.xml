@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="My1stProxy" groupId="com.My1stESBProject.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/My1stProxy.xml</file>
+    </artifact>
+    <artifact name="My1stSEQ" groupId="com.My1stESBProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/My1stSEQ.xml</file>
+    </artifact>
+    <artifact name="InSequence" groupId="com.My1stESBProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/InSequence.xml</file>
+    </artifact>
+    <artifact name="OutSequence" groupId="com.My1stESBProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/OutSequence.xml</file>
+    </artifact>
+    <artifact name="FaultSequence" groupId="com.My1stESBProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/FaultSequence.xml</file>
+    </artifact>
+    <artifact name="My1stEndpoint" groupId="com.My1stESBProject.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/My1stEndpoint.xml</file>
+    </artifact>
+    <artifact name="My1stProxyMapping" groupId="com.My1stESBProject.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/My1stProxyMapping.xml</file>
+    </artifact>
+    <artifact name="InMappingSequence" groupId="com.My1stESBProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/InMappingSequence.xml</file>
+    </artifact>
+    <artifact name="my1stapi" groupId="com.My1stESBProject.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/my1stapi.xml</file>
+    </artifact>
+</artifacts>

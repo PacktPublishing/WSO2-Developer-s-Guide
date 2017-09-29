@@ -1,0 +1,20 @@
+<inboundEndpoint name="TransferFile" onError="fault" protocol="file" sequence="TransferFileSequence" suspend="false">
+	<parameters>
+		<parameter name="interval">1000</parameter>
+		<parameter name="sequential">true</parameter>
+		<parameter name="coordination">true</parameter>
+		<parameter name="transport.vfs.FileURI">C:\Temp\in</parameter>
+		<parameter name="transport.vfs.ContentType">text/plain</parameter>
+		<parameter name="transport.vfs.Locking">enable</parameter>
+		<parameter name="transport.vfs.ActionAfterProcess">DELETE</parameter>
+		<parameter name="transport.vfs.ActionAfterFailure">DELETE</parameter>
+		<parameter name="transport.vfs.AutoLockRelease">false</parameter>
+		<parameter name="transport.vfs.LockReleaseSameNode">false</parameter>
+		<parameter name="transport.vfs.DistributedLock">false</parameter>
+		<parameter name="transport.vfs.FileSortAttribute">NONE</parameter>
+		<parameter name="transport.vfs.FileSortAscending">true</parameter>
+		<parameter name="transport.vfs.CreateFolder">true</parameter>
+		<parameter name="transport.vfs.Streaming">false</parameter>
+		<parameter name="transport.vfs.Build">false</parameter>
+	</parameters>
+</inboundEndpoint>

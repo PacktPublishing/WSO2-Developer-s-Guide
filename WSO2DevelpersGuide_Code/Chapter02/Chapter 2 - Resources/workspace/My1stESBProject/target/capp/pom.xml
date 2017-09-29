@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.My1stESBProject</groupId>
+  <artifactId>My1stESBProject_module</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>My1stESBProject_module</name>
+  <description>My1stESBProject_module</description>
+  <modules>
+    <module>artifacts\proxy-service\My1stProxy</module>
+    <module>artifacts\sequence\My1stSEQ</module>
+    <module>artifacts\sequence\InSequence</module>
+    <module>artifacts\sequence\OutSequence</module>
+    <module>artifacts\sequence\FaultSequence</module>
+    <module>artifacts\endpoint\My1stEndpoint</module>
+  </modules>
+</project>

@@ -1,0 +1,49 @@
+<api xmlns="http://ws.apache.org/ns/synapse" name="flights" context="/flights">
+	<resource methods="POST" uri-template="/get?from={from}&to={to}&date={date}">
+		<inSequence>
+
+			<!-- Rule -->
+			<rule xmlns="http://wso2.org/carbon/rules">
+				<source>soapBody</source>
+				<target action="replace" resultXpath="//country::text()">$country</target>
+				<ruleSet>
+					<properties/>
+					<rule resourceType="regular" sourceType="inline">
+						<![CDATA[
+							rule "Country ES" no-loop true
+							when
+								country: String()eval(country.equals("Spain"))
+							then
+								update(drools.getWorkingMemory().getFactHandle(country),"ES");
+							end
+			 
+							rule "Country GB" no-loop true
+							when
+								country: String()eval(country.equals("UK"))
+							then
+								update(drools.getWorkingMemory().getFactHandle(country),"GB");
+							end
+
+							rule "Country DE" no-loop true
+							when
+								country: String()eval(country.equals("Germany"))
+							then
+								update(drools.getWorkingMemory().getFactHandle(country),"DE");
+							end
+						]]>
+					</rule>
+				</ruleSet>
+				<input wrapperElementName="flights">
+					<fact elementName="country" type="java.lang.String" xpath="//country::text()"/>
+				</input>
+				<output wrapperElementName="flights">
+					<fact elementName="country" type="java.lang.String"/>
+				</output>
+			</rule>
+
+			<!-- Further processing -->
+			<log level="full"/>
+			<respond/>
+		</inSequence>
+	</resource>
+</api>

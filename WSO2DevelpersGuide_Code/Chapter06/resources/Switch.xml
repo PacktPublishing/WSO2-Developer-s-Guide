@@ -1,0 +1,27 @@
+<api xmlns="http://ws.apache.org/ns/synapse" name="flights" context="/flights">
+	<resource methods="POST" uri-template="/get?from={from}&to={to}&date={date}">
+		<inSequence>
+
+			<!-- Message switching -->
+			<switch source="//Country/name">
+				<case regex="Spain">
+					<property name="code" value="ES"/>
+				</case>
+				<case regex="UK">
+					<property name="code" value="GB"/>
+				</case>
+				<case regex="Germany">
+					<property name="code" value="DE"/>
+				</case>
+				<default>
+					<property name="code" value="UNKNOWN"/>
+				</default>
+			</switch>
+
+
+			<!-- Further processing -->
+			<log level="full"/>
+			<respond/>
+		</inSequence>
+	</resource>
+</api>

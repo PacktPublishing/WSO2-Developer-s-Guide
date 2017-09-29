@@ -1,0 +1,27 @@
+<api xmlns="http://ws.apache.org/ns/synapse" name="flights" context="/flights">
+	<resource methods="POST" uri-template="/get?from={from}&to={to}&date={date}">
+		<inSequence>
+
+			<!-- Message filtering -->
+			<filter xpath="boolean($axis2:HTTP_METHOD = 'POST' )">
+				<then> 
+					<log>
+						<property name="Method" value="POST"/>
+					</log>
+					<property name="flightID" expression="json-eval($.flightID)"/>
+				</then> 
+				<else>
+					<log>
+						<property name="Method" value="GET"/>
+					</log>
+					<property name="flightID" expression="$ctx:query.param.flightID"/>
+				</else>
+			</filter>
+
+
+			<!-- Further processing -->
+			<log level="full"/>
+			<respond/>
+		</inSequence>
+	</resource>
+</api>

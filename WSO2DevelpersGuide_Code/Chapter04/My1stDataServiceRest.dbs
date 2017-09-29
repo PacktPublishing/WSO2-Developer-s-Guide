@@ -1,0 +1,97 @@
+﻿<data name="My1stDataServiceRest" serviceNamespace="http://www.my1stdataservice.com" transports="http https local">
+   <config enableOData="false" id="MySQL">
+      <property name="carbon_datasource_name">MySQLWorld</property>
+   </config>
+   <query id="citiesXML" useConfig="MySQL">
+      <sql>SELECT ID, Name, CountryCode, District, Population FROM city</sql>
+      <result element="Cities" rowName="City">
+         <element column="ID" name="CityID" xsdType="string"/>
+         <element column="Name" name="CityName" xsdType="string"/>
+         <element column="CountryCode" name="CountryCode" xsdType="string"/>
+         <element column="District" name="District" xsdType="string"/>
+         <element column="Population" name="Population" xsdType="string"/>
+      </result>
+   </query>
+   <query id="citiesJSON" useConfig="MySQL">
+      <sql>SELECT ID, Name, CountryCode, District, Population FROM city</sql>
+      <result outputType="json" useColumnNumbers="true">{"Cities":  &#xd;{"City":[{"CityID": "$1","CityNAME":"$2","CountryCode": "$3","District": "$4","Population": "$5"}]}}</result>
+   </query>
+   <query id="citiesFromCountryXML" useConfig="MySQL">
+      <sql>SELECT ID, Name, CountryCode, District, Population FROM city WHERE CountryCode = :countryCode AND population &lt; :population</sql>
+      <result element="Cities" rowName="City">
+         <element column="ID" name="CityID" xsdType="string"/>
+         <element column="Name" name="CityName" xsdType="string"/>
+         <element column="CountryCode" name="CountryCode" xsdType="string"/>
+         <element column="District" name="District" xsdType="string"/>
+         <element column="Population" name="Population" xsdType="string"/>
+      </result>
+      <param name="countryCode" ordinal="1" sqlType="STRING" structType="[object HTMLInputElement]">
+         <validateLength maximum="50" minimum="3"/>
+      </param>
+      <param name="population" ordinal="2" sqlType="INTEGER" structType="[object HTMLInputElement]">
+         <validateLongRange maximum="9999999999" minimum="1"/>
+      </param>
+   </query>
+   <query id="insertCity" returnGeneratedKeys="true" useConfig="MySQL">
+      <sql>INSERT INTO city (Name, CountryCode,District,Population) VALUES (?,?,?,?)</sql>
+      <result element="GeneratedKeys" rowName="Entry" useColumnNumbers="true">
+         <element column="1" name="ID" xsdType="integer"/>
+      </result>
+      <param name="name" sqlType="STRING"/>
+      <param name="countryCode" sqlType="STRING"/>
+      <param name="district" sqlType="STRING"/>
+      <param name="population" sqlType="INTEGER"/>
+   </query>
+   <query id="updateCity" returnUpdatedRowCount="true" useConfig="MySQL">
+      <sql>UPDATE city SET Name=?,CountryCode=?,District=?,Population=? WHERE ID=?</sql>
+      <result element="UpdatedRowCount" rowName="" useColumnNumbers="true">
+         <element column="1" name="Value" xsdType="integer"/>
+      </result>
+      <param name="name" ordinal="1" sqlType="STRING"/>
+      <param name="countryCode" ordinal="2" sqlType="STRING"/>
+      <param name="district" ordinal="3" sqlType="STRING"/>
+      <param name="population" ordinal="4" sqlType="INTEGER"/>
+      <param name="id" ordinal="5" sqlType="INTEGER"/>
+   </query>
+   <query id="deleteCity" returnUpdatedRowCount="true" useConfig="MySQL">
+      <sql>DELETE FROM city WHERE id=?</sql>
+      <result element="UpdatedRowCount" rowName="" useColumnNumbers="true">
+         <element column="1" name="Value" xsdType="integer"/>
+      </result>
+      <param name="id" sqlType="INTEGER"/>
+   </query>
+   <operation name="citiesXML">
+      <call-query href="citiesXML"/>
+   </operation>
+   <operation name="citiesFromCountryXML">
+      <call-query href="citiesFromCountryXML">
+         <with-param name="countryCode" query-param="countryCode"/>
+         <with-param name="population" query-param="population"/>
+      </call-query>
+   </operation>
+   <operation name="insertCity">
+      <call-query href="insertCity">
+         <with-param name="name" query-param="name"/>
+         <with-param name="countryCode" query-param="countryCode"/>
+         <with-param name="district" query-param="district"/>
+         <with-param name="population" query-param="population"/>
+      </call-query>
+   </operation>
+   <operation name="updateCity">
+      <call-query href="updateCity">	
+         <with-param name="name" query-param="name"/>
+         <with-param name="countryCode" query-param="countryCode"/>
+         <with-param name="district" query-param="district"/>
+         <with-param name="population" query-param="population"/>
+         <with-param name="id" query-param="id"/>
+      </call-query>
+   </operation>
+   <operation name="deleteCity">
+      <call-query href="deleteCity">
+         <with-param name="id" query-param="id"/>
+      </call-query>
+   </operation>
+   <resource method="GET" path="cities">
+      <call-query href="citiesJSON"/>
+   </resource>
+</data>

@@ -1,0 +1,26 @@
+<api xmlns="http://ws.apache.org/ns/synapse" name="flights" context="/flights">
+	<resource methods="POST" uri-template="/get?from={from}&to={to}&date={date}">
+		<inSequence>
+		
+			<!-- Transformation -->
+			<script language="js">
+				<![CDATA[
+				var from = mc.getProperty("uri.var.from");
+				var to = mc.getProperty("uri.var.to");
+				var date = mc.getProperty("uri.var.date");
+				mc.setPayloadXML(
+					<flight>
+						<from>{from}</from>
+						<to>{to}</to>
+						<date>{date}</date>
+					</flight>
+				);
+				]]>
+			</script>
+			
+			<!-- Further processing -->
+			<log level="full"/>
+			<respond/>
+		</inSequence>
+	</resource>
+</api>

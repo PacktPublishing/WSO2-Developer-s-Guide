@@ -1,0 +1,30 @@
+<api xmlns="http://ws.apache.org/ns/synapse" name="flights" context="/flights">
+	<resource methods="POST" uri-template="/get?from={from}&to={to}&date={date}">
+		<inSequence>
+		
+			<!-- Message validation -->
+			<validate>
+				<!-- Specify the XSD schema -->
+				<schema key=" conf:/XMLSchema.xsd"/>
+				<on-fail>
+					<!-- Log the error in the server log -->
+					<log level="custom">
+						<property name="ERROR" value="Invalid Request"/>
+					</log>
+					<!-- Create a SOAP Fault message -->
+					<makefault>
+						<code value="tns:Receiver" xmlns:tns="http://www.w3.org/2003/05/soap-envelope"/>
+						<reason value="Invalid Request"/>
+					</makefault>
+					<!-- Return message to the client -->
+					<respond/>
+				</on-fail>
+			</validate>
+
+
+			<!-- Further processing -->
+			<log level="full"/>
+			<respond/>
+		</inSequence>
+	</resource>
+</api>

@@ -1,0 +1,26 @@
+<api xmlns="http://ws.apache.org/ns/synapse" name="flights" context="/flights">
+	<resource methods="POST" uri-template="/get?from={from}&to={to}&date={date}">
+		<inSequence>
+		
+			<!-- Transformation -->
+			<payloadFactory media-type="xml">
+				<format>
+					<flight>
+						<from>$1</from>
+						<to>$2</to>
+						<date>$3</date>
+					</flight>
+				</format>
+				<args>
+					<arg evaluator="xml" expression="get-property('uri.var.from')"/>
+					<arg evaluator="xml" expression="get-property('uri.var.to)"/>
+					<arg evaluator="xml" expression="get-property('uri.var.date)"/>
+				</args>
+			</payloadFactory>
+			
+			<!-- Further processing -->
+			<log level="full"/>
+			<respond/>
+		</inSequence>
+	</resource>
+</api>

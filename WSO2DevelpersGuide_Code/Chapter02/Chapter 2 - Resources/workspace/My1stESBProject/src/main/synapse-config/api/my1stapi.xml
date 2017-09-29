@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/my1stapi" name="my1stapi" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET">
+        <inSequence/>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

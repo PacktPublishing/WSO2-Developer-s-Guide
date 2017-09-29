@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="My1stRegistryResource" groupId="com.My1stRegistryResourceProject.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>My1stRegistryResource.xsl</file>
+            <path>/_system/config/XSL</path>
+            <mediaType>application/xsl+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="XSLTranformation_xsl" groupId="com.My1stRegistryResourceProject.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>XSLTranformation.xsl</file>
+            <path>/_system/config/XSL</path>
+            <mediaType>application/xsl+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="My1stDataMapperConfiguration" groupId="com.My1stRegistryResourceProject.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>My1stDataMapperConfiguration.dmc</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="My1stDataMapperConfiguration_inputSchema" groupId="com.My1stRegistryResourceProject.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>My1stDataMapperConfiguration_inputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+    <artifact name="My1stDataMapperConfiguration_outputSchema" groupId="com.My1stRegistryResourceProject.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>My1stDataMapperConfiguration_outputSchema.json</file>
+            <path>/_system/governance/datamapper</path>
+            <mediaType>text/plain</mediaType>
+        </item>
+    </artifact>
+</artifacts>

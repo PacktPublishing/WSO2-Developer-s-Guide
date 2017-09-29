@@ -1,0 +1,16 @@
+map_S_greetings_S_response = function(){ 
+var outputresponse={};
+var COMPARE_5_0 = '';
+
+COMPARE_5_0 = ( inputgreetings.iSay == 'How are you?' );
+outputresponse =  {};
+outputresponse.youSay = inputgreetings.iSay;
+outputresponse.iSay = (COMPARE_5_0)?('Fine, thanks!'):('What\'s up!');
+return outputresponse;
+};
+
+
+
+
+
+

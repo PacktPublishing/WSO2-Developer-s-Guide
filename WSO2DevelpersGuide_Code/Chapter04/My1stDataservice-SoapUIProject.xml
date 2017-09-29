@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a78a93a8-ef14-45e5-9cdc-7f6ee5fef5a8" activeEnvironment="Default" name="Chapter4_CitiesProject" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="1bd0ca6b-912e-4c72-b3d1-21d05fff41c0" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8280" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://UgetLaptop:8280</con:endpoint></con:endpoints><con:resource name="My1stDataService" path="/services/My1stDataServiceRest/cities" id="8d611f24-d3c8-47b0-b2e1-48009d86c5ed"><con:settings/><con:parameters/><con:method name="My1stDataService 1" id="b0ccea6e-5290-45b1-b60a-2a637bdf67bc" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/xml;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:cit="http://www.m1stdataservice.com/citiesJSON">cit:Cities</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:cit="http://localhost/services/My1stDataService/cities">cit:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/xml; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:cit="http://www.m1stdataservice.com/citiesJSON">cit:Cities</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>Application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:cit="http://localhost/services/My1stDataService/cities">cit:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType xsi:nil="true"/><con:status>400</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/xml; charset=UTF-8</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:soap="http://www.w3.org/2003/05/soap-envelope">soap:Reason</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:cit="http://localhost/services/My1stDataService/cities">cit:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>202</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>202</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>202</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>202</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>202</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>202</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="77cb782f-82d1-4e53-877e-939917b9797b" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Accept" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://localhost:8280</con:endpoint><con:request/><con:originalUri>http://localhost/services/My1stDataService/cities</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:WsdlInterface" id="5c46b855-e67a-420d-9f4b-37cb0398436c" wsaVersion="NONE" name="My1stDataServiceSOAP12Binding" type="wsdl" bindingName="{http://www.my1stdataservice.com}My1stDataServiceSOAP12Binding" soapVersion="1_2" anonymous="optional" definition="http://localhost:8280/services/My1stDataService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://UgetLaptop:8280/services/My1stDataService.SOAP12Endpoint</con:endpoint><con:endpoint>https://UgetLaptop:8243/services/My1stDataService.SecureSOAP12Endpoint</con:endpoint></con:endpoints><con:operation id="d177070a-cd89-4420-998b-38e1f2dcceba" isOneWay="false" action="urn:citiesFromCountryXML" name="citiesFromCountryXML" bindingOperationName="citiesFromCountryXML" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f093a6af-e9b6-423e-a6ac-c3cbc519194a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://UgetLaptop:8280/services/My1stDataService.SOAP12Endpoint</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:my1="http://www.my1stdataservice.com">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <my1:citiesFromCountryXML>\r
+         <my1:countryCode>?</my1:countryCode>\r
+         <my1:population>?</my1:population>\r
+      </my1:citiesFromCountryXML>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:citiesFromCountryXML"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="53d76aaf-ad34-49cf-bdd5-e6995e6d4b2f" isOneWay="false" action="urn:citiesXML" name="citiesXML" bindingOperationName="citiesXML" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8795cd39-e0d8-4099-9455-236d16b2fd61" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://UgetLaptop:8280/services/My1stDataService.SOAP12Endpoint</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:my1="http://www.my1stdataservice.com">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <my1:citiesXML/>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:citiesXML"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a8baa1fe-ffd2-42b4-a143-b5c343a26462" isOneWay="false" action="urn:deleteCity" name="deleteCity" bindingOperationName="deleteCity" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="19173d87-35b5-47e5-aa7c-e622be4d46ea" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://UgetLaptop:8280/services/My1stDataService.SOAP12Endpoint</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:my1="http://www.my1stdataservice.com">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <my1:deleteCity>\r
+         <my1:id>?</my1:id>\r
+      </my1:deleteCity>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:deleteCity"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="42574870-496f-4133-bfe4-4b6ee51623c9" isOneWay="false" action="urn:insertCity" name="insertCity" bindingOperationName="insertCity" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3d1a2548-1caa-43bb-800a-4fa17d06e8d5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://UgetLaptop:8280/services/My1stDataService.SOAP12Endpoint</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:my1="http://www.my1stdataservice.com">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <my1:insertCity>\r
+         <my1:name>?</my1:name>\r
+         <my1:countryCode>?</my1:countryCode>\r
+         <my1:district>?</my1:district>\r
+         <my1:population>?</my1:population>\r
+      </my1:insertCity>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:insertCity"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5564bf19-3ee7-4bc9-85a2-fdcdfd46b36e" isOneWay="false" action="urn:updateCity" name="updateCity" bindingOperationName="updateCity" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="586cc45c-d7fe-4d45-b69f-ae999e257b6f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://UgetLaptop:8280/services/My1stDataService.SOAP12Endpoint</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:my1="http://www.my1stdataservice.com">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <my1:updateCity>\r
+         <my1:name>?</my1:name>\r
+         <my1:countryCode>?</my1:countryCode>\r
+         <my1:district>?</my1:district>\r
+         <my1:population>?</my1:population>\r
+         <my1:id>?</my1:id>\r
+      </my1:updateCity>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:updateCity"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="3942b251-08b9-4001-894a-03e3f737b114" wsaVersion="NONE" name="My1stDataServiceSOAP11Binding" type="wsdl" bindingName="{http://www.my1stdataservice.com}My1stDataServiceSOAP11Binding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8280/services/My1stDataService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8280/services/My1stDataService?wsdl"><con:part><con:url>http://localhost:8280/services/My1stDataService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.my1stdataservice.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://www.my1stdataservice.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://ws.wso2.org/dataservice" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation/>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.my1stdataservice.com">
+      <xs:element name="updateCity">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" nillable="true" type="xs:string"/>
+            <xs:element name="countryCode" nillable="true" type="xs:string"/>
+            <xs:element name="district" nillable="true" type="xs:string"/>
+            <xs:element name="population" nillable="true" type="xs:int"/>
+            <xs:element name="id" nillable="true" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdatedRowCount" type="ns0:UpdatedRowCount"/>
+      <xs:complexType name="UpdatedRowCount">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:integer"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="deleteCity">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" nillable="true" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="citiesXML">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Cities" type="ns0:Cities"/>
+      <xs:complexType name="Cities">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="City" type="ns0:City"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="City">
+        <xs:sequence>
+          <xs:element name="CityID" nillable="true" type="xs:string"/>
+          <xs:element name="CityName" nillable="true" type="xs:string"/>
+          <xs:element name="CountryCode" nillable="true" type="xs:string"/>
+          <xs:element name="District" nillable="true" type="xs:string"/>
+          <xs:element name="Population" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="citiesFromCountryXML">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="countryCode" nillable="true" type="xs:string"/>
+            <xs:element name="population" nillable="true" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="insertCity">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" nillable="true" type="xs:string"/>
+            <xs:element name="countryCode" nillable="true" type="xs:string"/>
+            <xs:element name="district" nillable="true" type="xs:string"/>
+            <xs:element name="population" nillable="true" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GeneratedKeys" type="ns0:GeneratedKeys"/>
+      <xs:complexType name="GeneratedKeys">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Entry" type="ns0:Entry"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Entry">
+        <xs:sequence>
+          <xs:element name="ID" nillable="true" type="xs:integer"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ws.wso2.org/dataservice">
+      <xs:element name="DataServiceFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="current_params" type="xs:string"/>
+            <xs:element name="current_request_name" type="xs:string"/>
+            <xs:element name="nested_exception" type="xs:string"/>
+            <xs:element name="source_data_service">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="location" type="xs:string"/>
+                  <xs:element name="default_namespace" type="xs:string"/>
+                  <xs:element name="description" type="xs:string"/>
+                  <xs:element name="data_service_name" type="xs:string"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="ds_code" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="REQUEST_STATUS" type="xs:string"/>
+      <xs:element name="DATA_SERVICE_RESPONSE">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="updateCityRequest">
+    <wsdl:part name="parameters" element="ns0:updateCity"/>
+  </wsdl:message>
+  <wsdl:message name="updateCityResponse">
+    <wsdl:part name="parameters" element="ns0:UpdatedRowCount"/>
+  </wsdl:message>
+  <wsdl:message name="DataServiceFault">
+    <wsdl:part name="parameters" element="ns1:DataServiceFault"/>
+  </wsdl:message>
+  <wsdl:message name="deleteCityRequest">
+    <wsdl:part name="parameters" element="ns0:deleteCity"/>
+  </wsdl:message>
+  <wsdl:message name="deleteCityResponse">
+    <wsdl:part name="parameters" element="ns0:UpdatedRowCount"/>
+  </wsdl:message>
+  <wsdl:message name="citiesXMLRequest">
+    <wsdl:part name="parameters" element="ns0:citiesXML"/>
+  </wsdl:message>
+  <wsdl:message name="citiesXMLResponse">
+    <wsdl:part name="parameters" element="ns0:Cities"/>
+  </wsdl:message>
+  <wsdl:message name="citiesFromCountryXMLRequest">
+    <wsdl:part name="parameters" element="ns0:citiesFromCountryXML"/>
+  </wsdl:message>
+  <wsdl:message name="citiesFromCountryXMLResponse">
+    <wsdl:part name="parameters" element="ns0:Cities"/>
+  </wsdl:message>
+  <wsdl:message name="insertCityRequest">
+    <wsdl:part name="parameters" element="ns0:insertCity"/>
+  </wsdl:message>
+  <wsdl:message name="insertCityResponse">
+    <wsdl:part name="parameters" element="ns0:GeneratedKeys"/>
+  </wsdl:message>
+  <wsdl:portType name="My1stDataServicePortType">
+    <wsdl:operation name="updateCity">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:updateCityRequest" wsaw:Action="urn:updateCity"/>
+      <wsdl:output message="ns0:updateCityResponse" wsaw:Action="urn:updateCityResponse"/>
+      <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:updateCityDataServiceFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCity">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:deleteCityRequest" wsaw:Action="urn:deleteCity"/>
+      <wsdl:output message="ns0:deleteCityResponse" wsaw:Action="urn:deleteCityResponse"/>
+      <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:deleteCityDataServiceFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="citiesXML">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:citiesXMLRequest" wsaw:Action="urn:citiesXML"/>
+      <wsdl:output message="ns0:citiesXMLResponse" wsaw:Action="urn:citiesXMLResponse"/>
+      <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:citiesXMLDataServiceFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="citiesFromCountryXML">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:citiesFromCountryXMLRequest" wsaw:Action="urn:citiesFromCountryXML"/>
+      <wsdl:output message="ns0:citiesFromCountryXMLResponse" wsaw:Action="urn:citiesFromCountryXMLResponse"/>
+      <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:citiesFromCountryXMLDataServiceFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="insertCity">
+      <wsdl:documentation/>
+      <wsdl:input message="ns0:insertCityRequest" wsaw:Action="urn:insertCity"/>
+      <wsdl:output message="ns0:insertCityResponse" wsaw:Action="urn:insertCityResponse"/>
+      <wsdl:fault message="ns0:DataServiceFault" name="DataServiceFault" wsaw:Action="urn:insertCityDataServiceFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="My1stDataServiceSOAP11Binding" type="ns0:My1stDataServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="updateCity">
+      <soap:operation soapAction="urn:updateCity" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCity">
+      <soap:operation soapAction="urn:deleteCity" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="citiesXML">
+      <soap:operation soapAction="urn:citiesXML" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="citiesFromCountryXML">
+      <soap:operation soapAction="urn:citiesFromCountryXML" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="insertCity">
+      <soap:operation soapAction="urn:insertCity" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="My1stDataServiceSOAP12Binding" type="ns0:My1stDataServicePortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="updateCity">
+      <soap12:operation soapAction="urn:updateCity" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap12:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCity">
+      <soap12:operation soapAction="urn:deleteCity" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap12:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="citiesXML">
+      <soap12:operation soapAction="urn:citiesXML" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap12:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="citiesFromCountryXML">
+      <soap12:operation soapAction="urn:citiesFromCountryXML" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap12:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="insertCity">
+      <soap12:operation soapAction="urn:insertCity" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="DataServiceFault">
+        <soap12:fault use="literal" name="DataServiceFault"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="My1stDataServiceHttpBinding" type="ns0:My1stDataServicePortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="updateCity">
+      <http:operation location="updateCity"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCity">
+      <http:operation location="deleteCity"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="citiesXML">
+      <http:operation location="citiesXML"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="citiesFromCountryXML">
+      <http:operation location="citiesFromCountryXML"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertCity">
+      <http:operation location="insertCity"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="parameters"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="My1stDataService">
+    <wsdl:port name="SecureSOAP11Endpoint" binding="ns0:My1stDataServiceSOAP11Binding">
+      <soap:address location="https://UgetLaptop:8243/services/My1stDataService.SecureSOAP11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="SOAP11Endpoint" binding="ns0:My1stDataServiceSOAP11Binding">
+      <soap:address location="http://UgetLaptop:8280/services/My1stDataService.SOAP11Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="SecureSOAP12Endpoint" binding="ns0:My1stDataServiceSOAP12Binding">
+      <soap12:address location="https://UgetLaptop:8243/services/My1stDataService.SecureSOAP12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="SOAP12Endpoint" binding="ns0:My1stDataServiceSOAP12Binding">
+      <soap12:address location="http://UgetLaptop:8280/services/My1stDataService.SOAP12Endpoint"/>
+    </wsdl:port>
+    <wsdl:port name="SecureHTTPEndpoint" binding="ns0:My1stDataServiceHttpBinding">
+      <http:address location="https://UgetLaptop:8243/services/My1stDataService.SecureHTTPEndpoint"/>
+    </wsdl:port>
+    <wsdl:port name="HTTPEndpoint" binding="ns0:My1stDataServiceHttpBinding">
+      <http:address location="http://UgetLaptop:8280/services/My1stDataService.HTTPEndpoint"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://UgetLaptop:8280/services/My1stDataService.SOAP11Endpoint</con:endpoint><con:endpoint>https://UgetLaptop:8243/services/My1stDataService.SecureSOAP11Endpoint</con:endpoint></con:endpoints><con:operation id="bf54538a-858b-4f05-86d0-74f172927478" isOneWay="false" action="urn:citiesFromCountryXML" name="citiesFromCountryXML" bindingOperationName="citiesFromCountryXML" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="64a6a3a9-b52f-4c21-979b-bde21a4a8fdf" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8280/services/My1stDataService.SOAP11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my1="http://www.my1stdataservice.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <my1:citiesFromCountryXML>\r
+         <my1:countryCode>AFG</my1:countryCode>\r
+         <my1:population>1000000</my1:population>\r
+      </my1:citiesFromCountryXML>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:citiesFromCountryXML"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="272c8765-0c17-4ff1-93f6-3be87f4b506d" isOneWay="false" action="urn:citiesXML" name="citiesXML" bindingOperationName="citiesXML" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="28e4df93-f23f-4597-b15a-9c7cc429b0af" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8280/services/My1stDataService.SOAP11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my1="http://www.my1stdataservice.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <my1:citiesXML/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:citiesXML"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="cbcf3201-e0cc-4c56-834e-0a5ca2d24350" isOneWay="false" action="urn:deleteCity" name="deleteCity" bindingOperationName="deleteCity" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="18fece5b-c2c9-4f1b-817d-0c113ae42e3e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://UgetLaptop:8280/services/My1stDataService.SOAP11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my1="http://www.my1stdataservice.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <my1:deleteCity>\r
+         <my1:id>100062</my1:id>\r
+      </my1:deleteCity>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:deleteCity"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="fc415751-0cc1-4616-b9cb-78f4dd64034f" isOneWay="false" action="urn:insertCity" name="insertCity" bindingOperationName="insertCity" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4661757d-451c-4766-b887-5135e2455702" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8280/services/My1stDataService.SOAP11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my1="http://www.my1stdataservice.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <my1:insertCity>\r
+         <my1:name>Cordoba</my1:name>\r
+         <my1:countryCode>SPAIN</my1:countryCode>\r
+         <my1:district>Cordoba</my1:district>\r
+         <my1:population>350000</my1:population>\r
+      </my1:insertCity>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:insertCity"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4d111637-ebd5-4418-8518-eac04b79f16c" isOneWay="false" action="urn:updateCity" name="updateCity" bindingOperationName="updateCity" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dc188983-8dc9-4f20-9deb-d59e268190eb" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8280/services/My1stDataService.SOAP11Endpoint</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my1="http://www.my1stdataservice.com">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <my1:updateCity>\r
+         <my1:name>UpdtadName</my1:name>
+         <my1:countryCode>SPAIN</my1:countryCode>
+         <my1:district>Cordoba</my1:district>
+         <my1:population>500000</my1:population>
+         <my1:id>100063</my1:id>\r
+      </my1:updateCity>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:updateCity"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse"
+     name="UriTemplateAPI"
+     context="/uritemplateapi">
+	<resource methods="POST GET" uri-template="/resource/{param1}/{param2}">
+		<inSequence>
+			<log>
+				<property name="Value of param1" expression="get-property('uri.var.param1')"/>
+				<property name="Value of param2" expression="get-property('uri.var.param2')"/>
+			</log>
+			<respond/>
+		</inSequence>
+	</resource>
+</api>

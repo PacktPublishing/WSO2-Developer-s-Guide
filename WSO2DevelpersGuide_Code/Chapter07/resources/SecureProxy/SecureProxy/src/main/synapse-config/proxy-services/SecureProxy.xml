@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="SecureProxy" startOnLoad="true" transports="https http" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <endpoint name="endpoint_urn_uuid_6155e546-e652-4240-a510-a596b50b28aa">
+            <address uri="http://"/>
+        </endpoint>
+        <inSequence>
+            <throttle id="group_id">
+                <policy>
+                    <wsp:Policy wsu:id="WSO2MediatorThrottlingPolicy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+                        <throttle:MediatorThrottleAssertion xmlns:throttle="http://www.wso2.org/products/wso2commons/throttle">
+                            <throttle:MaximumConcurrentAccess>0</throttle:MaximumConcurrentAccess>
+                            <wsp:Policy>
+                                <throttle:ID throttle:type="IP">192.168.1.37</throttle:ID>
+                                <wsp:Policy>
+                                    <throttle:Control>
+                                        <wsp:Policy>
+                                            <throttle:MaximumCount>5</throttle:MaximumCount>
+                                            <throttle:UnitTime>60000</throttle:UnitTime>
+                                            <throttle:ProhibitTimePeriod>0</throttle:ProhibitTimePeriod>
+                                        </wsp:Policy>
+                                    </throttle:Control>
+                                </wsp:Policy>
+                            </wsp:Policy>
+                        </throttle:MediatorThrottleAssertion>
+                    </wsp:Policy>
+                </policy>
+                <onReject>
+                    <log>
+                        <property name="Throttle" value="onReject"/>
+                    </log>
+                </onReject>
+                <onAccept>
+                    <log>
+                        <property name="Throttle" value="onAccept"/>
+                    </log>
+                </onAccept>
+            </throttle>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </target>
+    <policy key="conf:policies/SecureProxyPolicy.xml"/>
+    <enableSec/>
+</proxy>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="LoggingProxy"
+       transports="http https"
+       startOnLoad="true">
+	<target>
+		<endpoint>
+			<address uri="http://localhost:8280/services/Version"/>
+		</endpoint>
+		<inSequence>
+			<log/>
+		</inSequence>
+		<outSequence>
+			<log level="full"/>
+			<send/>
+		</outSequence>
+	</target>
+</proxy>

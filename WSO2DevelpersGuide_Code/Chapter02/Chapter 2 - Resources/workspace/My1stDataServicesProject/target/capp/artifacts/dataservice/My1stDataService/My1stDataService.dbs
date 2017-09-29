@@ -1,0 +1,6 @@
+<data name="My1stDataService" serviceNamespace="http://dataservices/my1stdataservice" serviceGroup="">
+    <description>This is my first data service</description>
+    <config id="mysql">
+        <property name="carbon_datasource_name">MySQL</property>
+    </config>
+</data>

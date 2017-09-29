@@ -1,0 +1,16 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "id" : "",
+  "title" : "response",
+  "type" : "object",
+  "properties" : {
+    "youSay" : {
+      "id" : "null/0",
+      "type" : "string"
+    },
+    "iSay" : {
+      "id" : "null/0",
+      "type" : "string"
+    }
+  }
+}
